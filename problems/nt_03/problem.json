@@ -1,0 +1,14 @@
+{
+  "title": "Lũy thừa modulo",
+  "code": "LUYTHUA",
+  "topic": "number",
+  "order": 3,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "a ≤ 10⁹, b ≤ 1000, T ≤ 100"},
+    {"points": 30, "desc": "a ≤ 10⁹"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

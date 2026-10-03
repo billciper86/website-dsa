@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chủ đề ôn thi</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="topic-layout">
+    <aside class="toc">
+      <div class="small muted" style="margin-bottom:6px">CHỦ ĐỀ</div>
+      <select id="topic-pick" style="width:100%;margin-bottom:14px"></select>
+      <div class="small muted" style="margin-bottom:6px">MỤC LỤC</div>
+      <nav id="toc"></nav>
+      <div class="card" style="margin-top:16px;padding:12px">
+        <div class="small muted">Tiến độ chủ đề</div>
+        <div class="progress ok" style="margin:6px 0"><span id="tp-bar" style="width:0"></span></div>
+        <div class="small"><b id="tp-pct">0%</b></div>
+      </div>
+    </aside>
+    <article>
+      <div class="row" style="margin-bottom:6px"><span class="badge" id="day-badge"></span><span class="grow"></span>
+        <button class="btn" id="read-btn">Đánh dấu đã học lý thuyết</button></div>
+      <div class="md" id="content"><div class="empty"><span class="spinner"></span> Đang tải…</div></div>
+      <div class="row" style="margin-top:30px;justify-content:space-between" id="pager"></div>
+    </article>
+  </div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/sim-engine.js"></script>
+<script src="js/pages/topic.js"></script>
+</body>
+</html>

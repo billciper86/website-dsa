@@ -1,0 +1,14 @@
+{
+  "title": "Ếch nhảy",
+  "code": "ECHNHAY",
+  "topic": "dp1",
+  "order": 3,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 20, "desc": "n ≤ 15"},
+    {"points": 30, "desc": "K ≤ 2"},
+    {"points": 50, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

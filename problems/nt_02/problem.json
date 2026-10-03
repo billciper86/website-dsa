@@ -1,0 +1,14 @@
+{
+  "title": "Đếm số nguyên tố",
+  "code": "DEMNT",
+  "topic": "number",
+  "order": 2,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "r ≤ 1000, q ≤ 100"},
+    {"points": 30, "desc": "r ≤ 10⁶"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

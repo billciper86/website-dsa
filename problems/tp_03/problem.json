@@ -1,0 +1,13 @@
+{
+  "title": "Đoạn ít màu",
+  "code": "ITMAU",
+  "topic": "twoptr",
+  "order": 3,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "n ≤ 2000"},
+    {"points": 60, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

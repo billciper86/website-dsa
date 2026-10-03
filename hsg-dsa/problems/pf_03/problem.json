@@ -1,0 +1,14 @@
+{
+  "title": "Tưới cây",
+  "code": "TUOICAY",
+  "topic": "prefix",
+  "order": 3,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n, m ≤ 1000"},
+    {"points": 30, "desc": "aᵢ ≤ 1000, x ≤ 1000"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

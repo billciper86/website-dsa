@@ -1,0 +1,14 @@
+{
+  "title": "Đếm bội số",
+  "code": "BOISO",
+  "topic": "complexity",
+  "order": 1,
+  "difficulty": 1,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "b ≤ 10⁶, T ≤ 10"},
+    {"points": 30, "desc": "b ≤ 10⁹"},
+    {"points": 30, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

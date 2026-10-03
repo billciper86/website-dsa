@@ -1,0 +1,503 @@
+{
+ "fingerprint": "f1c44dea4f195f1235c5061627b24f1af80f9655",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 12,
+   "sol_ms": 0
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "1 ký tự",
+   "size": 2,
+   "sol_ms": 15
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "hòa -> chọn 'a'",
+   "size": 3,
+   "sol_ms": 15
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "đủ 26 chữ, mỗi chữ 1 lần -> a 1",
+   "size": 27,
+   "sol_ms": 0
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "toàn 'z'",
+   "size": 1001,
+   "sol_ms": 0
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "hòa giữa x, y, z",
+   "size": 1000,
+   "sol_ms": 15
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 185,
+   "sol_ms": 15
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 795,
+   "sol_ms": 15
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 834,
+   "sol_ms": 15
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 914,
+   "sol_ms": 15
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 175,
+   "sol_ms": 15
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 660,
+   "sol_ms": 15
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 896,
+   "sol_ms": 15
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 637,
+   "sol_ms": 15
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 561,
+   "sol_ms": 15
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 971,
+   "sol_ms": 15
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 939,
+   "sol_ms": 31
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 78,
+   "sol_ms": 15
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 99,
+   "sol_ms": 0
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 141,
+   "sol_ms": 0
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 408,
+   "sol_ms": 15
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 167,
+   "sol_ms": 15
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 748,
+   "sol_ms": 15
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 491,
+   "sol_ms": 0
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 773,
+   "sol_ms": 0
+  },
+  {
+   "name": "026",
+   "subtask": 2,
+   "note": "toàn 'y', 1e6",
+   "size": 1000001,
+   "sol_ms": 15
+  },
+  {
+   "name": "027",
+   "subtask": 2,
+   "note": "hòa giữa 3 chữ, 1e6",
+   "size": 1000000,
+   "sol_ms": 15
+  },
+  {
+   "name": "028",
+   "subtask": 2,
+   "note": "26 chữ bằng nhau",
+   "size": 999987,
+   "sol_ms": 15
+  },
+  {
+   "name": "029",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 1000001,
+   "sol_ms": 0
+  },
+  {
+   "name": "030",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 1000001,
+   "sol_ms": 31
+  },
+  {
+   "name": "031",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 1000001,
+   "sol_ms": 15
+  },
+  {
+   "name": "032",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 999997,
+   "sol_ms": 15
+  },
+  {
+   "name": "033",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 999997,
+   "sol_ms": 15
+  },
+  {
+   "name": "034",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 48741,
+   "sol_ms": 0
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 13333,
+   "sol_ms": 15
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 40452,
+   "sol_ms": 15
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 97057,
+   "sol_ms": 15
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 70902,
+   "sol_ms": 0
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 31663,
+   "sol_ms": 15
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 54844,
+   "sol_ms": 0
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 83041,
+   "sol_ms": 0
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 52815,
+   "sol_ms": 0
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 59246,
+   "sol_ms": 0
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 92011,
+   "sol_ms": 0
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 96126,
+   "sol_ms": 0
+  },
+  {
+   "name": "046",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 76122,
+   "sol_ms": 0
+  },
+  {
+   "name": "047",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 64129,
+   "sol_ms": 15
+  },
+  {
+   "name": "048",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 87420,
+   "sol_ms": 15
+  },
+  {
+   "name": "049",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 12385,
+   "sol_ms": 0
+  },
+  {
+   "name": "050",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 23182,
+   "sol_ms": 15
+  },
+  {
+   "name": "051",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 5583,
+   "sol_ms": 15
+  },
+  {
+   "name": "052",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 74492,
+   "sol_ms": 15
+  },
+  {
+   "name": "053",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 86128,
+   "sol_ms": 15
+  },
+  {
+   "name": "054",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 79111,
+   "sol_ms": 0
+  },
+  {
+   "name": "055",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 55341,
+   "sol_ms": 0
+  },
+  {
+   "name": "056",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 96888,
+   "sol_ms": 0
+  },
+  {
+   "name": "057",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 88638,
+   "sol_ms": 0
+  },
+  {
+   "name": "058",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 12565,
+   "sol_ms": 0
+  },
+  {
+   "name": "059",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 70426,
+   "sol_ms": 15
+  },
+  {
+   "name": "060",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 88031,
+   "sol_ms": 0
+  },
+  {
+   "name": "061",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 50906,
+   "sol_ms": 0
+  },
+  {
+   "name": "062",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 21293,
+   "sol_ms": 0
+  },
+  {
+   "name": "063",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 11038,
+   "sol_ms": 0
+  },
+  {
+   "name": "064",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 51683,
+   "sol_ms": 15
+  },
+  {
+   "name": "065",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 70953,
+   "sol_ms": 15
+  },
+  {
+   "name": "066",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 8806,
+   "sol_ms": 15
+  },
+  {
+   "name": "067",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 81655,
+   "sol_ms": 0
+  },
+  {
+   "name": "068",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 55664,
+   "sol_ms": 0
+  },
+  {
+   "name": "069",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 12866,
+   "sol_ms": 0
+  },
+  {
+   "name": "070",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 29130,
+   "sol_ms": 15
+  },
+  {
+   "name": "071",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 83281,
+   "sol_ms": 0
+  }
+ ],
+ "count": 71
+}

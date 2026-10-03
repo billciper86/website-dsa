@@ -1,0 +1,14 @@
+{
+  "title": "ƯCLN và BCNN",
+  "code": "UCBC",
+  "topic": "number",
+  "order": 1,
+  "difficulty": 1,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "a, b ≤ 10⁴, T ≤ 100"},
+    {"points": 30, "desc": "a, b ≤ 10⁹"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

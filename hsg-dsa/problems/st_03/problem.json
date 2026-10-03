@@ -1,0 +1,13 @@
+{
+  "title": "Đếm hoán vị",
+  "code": "HOANVI",
+  "topic": "string",
+  "order": 3,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "|s| ≤ 1000"},
+    {"points": 60, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Xếp hàng",
+  "code": "XEPHANG",
+  "topic": "greedy",
+  "order": 2,
+  "difficulty": 1,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 20, "desc": "n ≤ 8"},
+    {"points": 30, "desc": "n ≤ 1000, tᵢ ≤ 1000"},
+    {"points": 50, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

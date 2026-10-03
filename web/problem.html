@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài tập</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="small" style="margin-bottom:10px" id="crumb"><a href="problems.html">← Danh sách bài</a></div>
+  <div class="prob-layout">
+    <section class="card" id="statement"><div class="empty"><span class="spinner"></span> Đang tải đề…</div></section>
+    <section class="right-col" id="right"></section>
+  </div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/workspace.js"></script>
+<script>
+(async function () {
+  const H = window.HSG;
+  H.initPage("problems");
+  const pid = H.qs("id");
+  let p;
+  try { p = await WS.loadProblem(pid); }
+  catch (e) { document.getElementById("statement").innerHTML = '<div class="empty">Không tải được bài: ' + H.esc(e.message) + "</div>"; return; }
+  document.title = p.title + " — Bài tập";
+  try {
+    const topics = await H.getJSON("/content/topics/index.json");
+    const t = topics.find((x) => x.id === p.topic);
+    if (t) document.getElementById("crumb").innerHTML = `<a href="problems.html">Bài tập</a> / <a href="topic.html?id=${t.id}">${H.esc(t.title)}</a> / ${H.esc(p.title)}`;
+  } catch (e) {}
+  const samples = WS.renderStatement(document.getElementById("statement"), p);
+  const spent = WS.problemClock(pid, document.getElementById("ptime"));
+  new WS.Workspace({ problem: p, samples, right: document.getElementById("right"), draftKey: "draft." + pid, getSpent: spent });
+})();
+</script>
+</body>
+</html>

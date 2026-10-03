@@ -1,0 +1,496 @@
+{
+ "fingerprint": "f6a5213755cbfb43d08bd4d8328a63c1cb2e0b53",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 18,
+   "sol_ms": 15
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "n=1",
+   "size": 4,
+   "sol_ms": 0
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "toàn bằng nhau -> 1 (bẫy không giảm)",
+   "size": 43,
+   "sol_ms": 15
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "giảm dần -> 1",
+   "size": 54,
+   "sol_ms": 0
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "tăng dần -> 20",
+   "size": 54,
+   "sol_ms": 15
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "cặp trùng nhau",
+   "size": 43,
+   "sol_ms": 15
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 149,
+   "sol_ms": 15
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 8,
+   "sol_ms": 31
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 178,
+   "sol_ms": 0
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 27,
+   "sol_ms": 15
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 20,
+   "sol_ms": 15
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 34,
+   "sol_ms": 0
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 25,
+   "sol_ms": 15
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 64,
+   "sol_ms": 0
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 14,
+   "sol_ms": 0
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 25,
+   "sol_ms": 15
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 41,
+   "sol_ms": 15
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 5,
+   "sol_ms": 31
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 10,
+   "sol_ms": 0
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 77,
+   "sol_ms": 0
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 41,
+   "sol_ms": 15
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 23,
+   "sol_ms": 15
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 192,
+   "sol_ms": 15
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 139,
+   "sol_ms": 0
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 39,
+   "sol_ms": 15
+  },
+  {
+   "name": "026",
+   "subtask": 2,
+   "note": "toàn bằng nhau",
+   "size": 10005,
+   "sol_ms": 15
+  },
+  {
+   "name": "027",
+   "subtask": 2,
+   "note": "tăng dần 5000",
+   "size": 23895,
+   "sol_ms": 15
+  },
+  {
+   "name": "028",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 27955,
+   "sol_ms": 15
+  },
+  {
+   "name": "029",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 6883,
+   "sol_ms": 15
+  },
+  {
+   "name": "030",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 6928,
+   "sol_ms": 15
+  },
+  {
+   "name": "031",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 40604,
+   "sol_ms": 15
+  },
+  {
+   "name": "032",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 37174,
+   "sol_ms": 15
+  },
+  {
+   "name": "033",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 11101,
+   "sol_ms": 15
+  },
+  {
+   "name": "034",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 43466,
+   "sol_ms": 15
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 38015,
+   "sol_ms": 15
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 7961,
+   "sol_ms": 0
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 17907,
+   "sol_ms": 15
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 18881,
+   "sol_ms": 15
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 39055,
+   "sol_ms": 15
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 6363,
+   "sol_ms": 31
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 50509,
+   "sol_ms": 15
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 12585,
+   "sol_ms": 15
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 18295,
+   "sol_ms": 31
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 32141,
+   "sol_ms": 15
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 43996,
+   "sol_ms": 15
+  },
+  {
+   "name": "046",
+   "subtask": 3,
+   "note": "tăng dần 2e5 (bắt O(n^2))",
+   "size": 1277792,
+   "sol_ms": 46
+  },
+  {
+   "name": "047",
+   "subtask": 3,
+   "note": "toàn bằng nhau",
+   "size": 2200007,
+   "sol_ms": 78
+  },
+  {
+   "name": "048",
+   "subtask": 3,
+   "note": "giảm dần",
+   "size": 2000008,
+   "sol_ms": 46
+  },
+  {
+   "name": "049",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2077503,
+   "sol_ms": 62
+  },
+  {
+   "name": "050",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2077790,
+   "sol_ms": 62
+  },
+  {
+   "name": "051",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2000007,
+   "sol_ms": 46
+  },
+  {
+   "name": "052",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2077810,
+   "sol_ms": 62
+  },
+  {
+   "name": "053",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1166463,
+   "sol_ms": 62
+  },
+  {
+   "name": "054",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 613208,
+   "sol_ms": 46
+  },
+  {
+   "name": "055",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 531356,
+   "sol_ms": 15
+  },
+  {
+   "name": "056",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 287317,
+   "sol_ms": 0
+  },
+  {
+   "name": "057",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 281463,
+   "sol_ms": 62
+  },
+  {
+   "name": "058",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 326695,
+   "sol_ms": 31
+  },
+  {
+   "name": "059",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 378845,
+   "sol_ms": 15
+  },
+  {
+   "name": "060",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 198845,
+   "sol_ms": 0
+  },
+  {
+   "name": "061",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 118318,
+   "sol_ms": 15
+  },
+  {
+   "name": "062",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 338780,
+   "sol_ms": 31
+  },
+  {
+   "name": "063",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 488705,
+   "sol_ms": 15
+  },
+  {
+   "name": "064",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 312084,
+   "sol_ms": 15
+  },
+  {
+   "name": "065",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 390193,
+   "sol_ms": 0
+  },
+  {
+   "name": "066",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 278591,
+   "sol_ms": 15
+  },
+  {
+   "name": "067",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 449468,
+   "sol_ms": 31
+  },
+  {
+   "name": "068",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 229146,
+   "sol_ms": 15
+  },
+  {
+   "name": "069",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 270637,
+   "sol_ms": 15
+  },
+  {
+   "name": "070",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 99055,
+   "sol_ms": 0
+  }
+ ],
+ "count": 70
+}

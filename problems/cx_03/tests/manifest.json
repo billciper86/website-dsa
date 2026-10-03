@@ -1,0 +1,510 @@
+{
+ "fingerprint": "5e90da08cd4cb5f376edaebb5860e9647d765712",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 10,
+   "sol_ms": 74
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "n=1",
+   "size": 4,
+   "sol_ms": 52
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "số rất nhỏ",
+   "size": 8,
+   "sol_ms": 46
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "biên 1e6, số nguyên tố lớn",
+   "size": 24,
+   "sol_ms": 50
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "nhiều ước (240 ước)",
+   "size": 37,
+   "sol_ms": 27
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "số chính phương (bẫy đếm 2 lần)",
+   "size": 26,
+   "sol_ms": 27
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "T=20, n=1e6",
+   "size": 163,
+   "sol_ms": 26
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 16,
+   "sol_ms": 18
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 108,
+   "sol_ms": 18
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 26,
+   "sol_ms": 17
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 5,
+   "sol_ms": 18
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 9,
+   "sol_ms": 20
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 17,
+   "sol_ms": 20
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 106,
+   "sol_ms": 22
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 28,
+   "sol_ms": 21
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 34,
+   "sol_ms": 19
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 13,
+   "sol_ms": 19
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 99,
+   "sol_ms": 19
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 110,
+   "sol_ms": 19
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 85,
+   "sol_ms": 18
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 16,
+   "sol_ms": 20
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 26,
+   "sol_ms": 19
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 82,
+   "sol_ms": 21
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 60,
+   "sol_ms": 20
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 15,
+   "sol_ms": 20
+  },
+  {
+   "name": "026",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 89,
+   "sol_ms": 20
+  },
+  {
+   "name": "027",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 53,
+   "sol_ms": 21
+  },
+  {
+   "name": "028",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 74,
+   "sol_ms": 20
+  },
+  {
+   "name": "029",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 65,
+   "sol_ms": 21
+  },
+  {
+   "name": "030",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 5,
+   "sol_ms": 19
+  },
+  {
+   "name": "031",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 23,
+   "sol_ms": 17
+  },
+  {
+   "name": "032",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 47,
+   "sol_ms": 22
+  },
+  {
+   "name": "033",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 82,
+   "sol_ms": 21
+  },
+  {
+   "name": "034",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 67,
+   "sol_ms": 20
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "n=1e12 (chính phương: 10^6 * 10^6)",
+   "size": 16,
+   "sol_ms": 20
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "số nguyên tố lớn nhất < 1e12",
+   "size": 15,
+   "sol_ms": 24
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "(10^6-1)^2 chính phương",
+   "size": 15,
+   "sol_ms": 24
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "6720 ước",
+   "size": 15,
+   "sol_ms": 25
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "lũy thừa",
+   "size": 41,
+   "sol_ms": 29
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "T=20 số nguyên tố lớn -> bắt lời giải chậm",
+   "size": 263,
+   "sol_ms": 83
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "T=20, n=1e12",
+   "size": 283,
+   "sol_ms": 91
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "quanh 2^31 (bẫy int)",
+   "size": 46,
+   "sol_ms": 22
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 218,
+   "sol_ms": 44
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 77,
+   "sol_ms": 25
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 220,
+   "sol_ms": 47
+  },
+  {
+   "name": "046",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 115,
+   "sol_ms": 30
+  },
+  {
+   "name": "047",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 260,
+   "sol_ms": 49
+  },
+  {
+   "name": "048",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 118,
+   "sol_ms": 32
+  },
+  {
+   "name": "049",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 28,
+   "sol_ms": 20
+  },
+  {
+   "name": "050",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 145,
+   "sol_ms": 33
+  },
+  {
+   "name": "051",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 41,
+   "sol_ms": 24
+  },
+  {
+   "name": "052",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 146,
+   "sol_ms": 36
+  },
+  {
+   "name": "053",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 131,
+   "sol_ms": 37
+  },
+  {
+   "name": "054",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 41,
+   "sol_ms": 24
+  },
+  {
+   "name": "055",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 133,
+   "sol_ms": 36
+  },
+  {
+   "name": "056",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 232,
+   "sol_ms": 47
+  },
+  {
+   "name": "057",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 210,
+   "sol_ms": 50
+  },
+  {
+   "name": "058",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 92,
+   "sol_ms": 28
+  },
+  {
+   "name": "059",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 130,
+   "sol_ms": 35
+  },
+  {
+   "name": "060",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 245,
+   "sol_ms": 42
+  },
+  {
+   "name": "061",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 211,
+   "sol_ms": 44
+  },
+  {
+   "name": "062",
+   "subtask": 2,
+   "note": "ngẫu nhiên lớn",
+   "size": 131,
+   "sol_ms": 32
+  },
+  {
+   "name": "063",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 70
+  },
+  {
+   "name": "064",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 71
+  },
+  {
+   "name": "065",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 72
+  },
+  {
+   "name": "066",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 68
+  },
+  {
+   "name": "067",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 61
+  },
+  {
+   "name": "068",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 72
+  },
+  {
+   "name": "069",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 69
+  },
+  {
+   "name": "070",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 74
+  },
+  {
+   "name": "071",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 67
+  },
+  {
+   "name": "072",
+   "subtask": 2,
+   "note": "T=20 sát 1e12",
+   "size": 263,
+   "sol_ms": 59
+  }
+ ],
+ "count": 72
+}

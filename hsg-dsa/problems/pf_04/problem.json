@@ -1,0 +1,14 @@
+{
+  "title": "Tổng hình chữ nhật",
+  "code": "TONGHCN",
+  "topic": "prefix",
+  "order": 4,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n, m ≤ 50, q ≤ 100"},
+    {"points": 30, "desc": "0 ≤ aᵢⱼ ≤ 100"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

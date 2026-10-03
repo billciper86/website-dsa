@@ -1,0 +1,14 @@
+{
+  "title": "Dãy con tăng dài nhất",
+  "code": "DAYCON",
+  "topic": "dp2",
+  "order": 2,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 20, "desc": "n ≤ 20"},
+    {"points": 50, "desc": "n ≤ 5000"},
+    {"points": 30, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

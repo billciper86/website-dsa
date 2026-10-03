@@ -1,0 +1,161 @@
+# -*- coding: utf-8 -*-
+"""
+Server chạy trên máy bạn: mở website ôn thi + nhận code C++ để chấm.
+Chạy:  python server.py      (hoặc nhấp đúp CHAY_WEB.bat)
+Chỉ lắng nghe ở 127.0.0.1 nên máy khác trong mạng không truy cập được.
+"""
+import json
+import mimetypes
+import os
+import sys
+import threading
+import traceback
+import webbrowser
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+from urllib.parse import urlparse, unquote
+
+import judge_core as jc
+
+ROOT = jc.ROOT
+WEB = os.path.join(ROOT, "web")
+CONTENT = os.path.join(ROOT, "content")
+PORT = int(os.environ.get("PORT", "8686"))
+
+mimetypes.add_type("text/markdown; charset=utf-8", ".md")
+mimetypes.add_type("application/javascript; charset=utf-8", ".js")
+mimetypes.add_type("text/css; charset=utf-8", ".css")
+mimetypes.add_type("application/json; charset=utf-8", ".json")
+
+
+def safe_join(base, rel):
+    p = os.path.normpath(os.path.join(base, rel.lstrip("/\\")))
+    if not p.startswith(os.path.normpath(base)):
+        return None
+    return p
+
+
+class Handler(BaseHTTPRequestHandler):
+    server_version = "HSGJudge/1.0"
+
+    def log_message(self, fmt, *args):
+        if args and "/api/" in str(args[0]):
+            sys.stdout.write("  " + (fmt % args) + "\n")
+
+    def send_json(self, obj, code=200):
+        data = json.dumps(obj, ensure_ascii=False).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(data)
+
+    def send_file(self, path):
+        if not path or not os.path.isfile(path):
+            self.send_error(404, "Không tìm thấy")
+            return
+        ctype = mimetypes.guess_type(path)[0] or "application/octet-stream"
+        if ctype.startswith("text/") and "charset" not in ctype:
+            ctype += "; charset=utf-8"
+        with open(path, "rb") as f:
+            data = f.read()
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-cache")
+        self.end_headers()
+        self.wfile.write(data)
+
+    # ------------------------------------------------------------ GET
+    def do_GET(self):
+        path = unquote(urlparse(self.path).path)
+        try:
+            if path == "/api/status":
+                return self.send_json({"ok": True, "gpp": jc.gpp_version(), "gpp_path": jc.GPP})
+            if path == "/api/problems":
+                return self.send_json(jc.list_problems())
+            if path.startswith("/api/problem/"):
+                return self.send_json(jc.load_problem(path.split("/")[-1]))
+            if path.startswith("/api/solution/"):
+                pid = path.split("/")[-1]
+                jc.load_problem(pid)  # kiểm tra mã bài hợp lệ
+                d = os.path.join(jc.PROBLEMS_DIR, pid)
+                brute = os.path.join(d, "brute.cpp")
+                return self.send_json({
+                    "code": jc.read_text(os.path.join(d, "sol.cpp")),
+                    "brute": "\n".join(l for l in jc.read_text(brute).splitlines()
+                                       if "KY_VONG" not in l) if os.path.isfile(brute) else "",
+                })
+            if path.startswith("/content/"):
+                return self.send_file(safe_join(CONTENT, path[len("/content/"):]))
+            if path == "/":
+                path = "/index.html"
+            if path == "/favicon.ico":
+                self.send_response(204)
+                self.end_headers()
+                return
+            return self.send_file(safe_join(WEB, path))
+        except Exception as e:
+            traceback.print_exc()
+            return self.send_json({"error": str(e)}, 500)
+
+    # ------------------------------------------------------------ POST
+    def do_POST(self):
+        path = urlparse(self.path).path
+        try:
+            n = int(self.headers.get("Content-Length", "0"))
+            body = json.loads(self.rfile.read(n).decode("utf-8") or "{}")
+            if path == "/api/judge":
+                print(f"  -> Chấm bài {body.get('id')}")
+                res = jc.judge(body["id"], body["code"], log=lambda m: print("  " + m))
+                print(f"  <- {res['verdict']}  {res['score']}/{res['max_score']} điểm")
+                return self.send_json(res)
+            if path == "/api/run":
+                return self.send_json(jc.run_custom(body.get("code", ""), body.get("input", "")))
+            return self.send_json({"error": "Không có API này"}, 404)
+        except Exception as e:
+            traceback.print_exc()
+            return self.send_json({"error": str(e)}, 500)
+
+
+def main():
+    print("=" * 60)
+    print("  WEBSITE ÔN THI HSG TIN HỌC - DSA")
+    print("=" * 60)
+    v = jc.gpp_version()
+    if v:
+        print(f"  g++ : {v}\n        ({jc.GPP})")
+    else:
+        print("  [!] KHÔNG tìm thấy g++. Website vẫn chạy nhưng không chấm được bài.")
+        print("      Xem phần 'Cài g++' trong HUONG_DAN.md")
+    port = PORT
+    httpd = None
+    for p in range(port, port + 20):
+        try:
+            httpd = ThreadingHTTPServer(("127.0.0.1", p), Handler)
+            port = p
+            break
+        except OSError:
+            continue
+    if httpd is None:
+        print("Không mở được cổng mạng nào từ", PORT)
+        return
+    url = f"http://127.0.0.1:{port}/"
+    print(f"  Website: {url}")
+    print("  Giữ cửa sổ này mở trong lúc học. Nhấn Ctrl+C để tắt.")
+    print("=" * 60)
+    if "--no-browser" not in sys.argv:
+        threading.Timer(0.8, lambda: webbrowser.open(url)).start()
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nĐã tắt server.")
+
+
+if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8")
+        except Exception:
+            pass
+    main()

@@ -1,0 +1,13 @@
+{
+  "title": "Đoạn dài nhất có tổng không quá S",
+  "code": "DOANS",
+  "topic": "twoptr",
+  "order": 1,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "n ≤ 5000"},
+    {"points": 60, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Lịch họp",
+  "code": "LICHHOP",
+  "topic": "greedy",
+  "order": 1,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n ≤ 15"},
+    {"points": 70, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

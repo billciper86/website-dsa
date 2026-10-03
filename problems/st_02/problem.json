@@ -1,0 +1,13 @@
+{
+  "title": "Xâu đối xứng dài nhất",
+  "code": "DOIXUNG",
+  "topic": "string",
+  "order": 2,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "|s| ≤ 100"},
+    {"points": 70, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

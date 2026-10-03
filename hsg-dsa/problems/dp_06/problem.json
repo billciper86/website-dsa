@@ -1,0 +1,13 @@
+{
+  "title": "Xâu con chung dài nhất",
+  "code": "XAUCHUNG",
+  "topic": "dp2",
+  "order": 3,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "|s|, |t| ≤ 12"},
+    {"points": 70, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danh sách bài tập</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap narrow">
+  <h1 style="margin-top:0">Bài tập</h1>
+  <p class="muted">Mỗi bài có ít nhất 70 test sinh tự động, chia theo subtask. Bài nào cũng có lời giải trâu để bạn lấy điểm subtask nhỏ trước.</p>
+  <div id="list"><div class="empty"><span class="spinner"></span> Đang tải…</div></div>
+</main>
+<script src="js/common.js"></script>
+<script>
+(async function () {
+  const H = window.HSG;
+  H.initPage("problems");
+  let topics, probs;
+  try { [topics, probs] = await Promise.all([H.getJSON("/content/topics/index.json"), H.api("/api/problems")]); }
+  catch (e) { document.getElementById("list").innerHTML = ""; return; }
+  const byId = Object.fromEntries(probs.map((p) => [p.id, p]));
+  const stars = (d) => "★".repeat(d) + "☆".repeat(Math.max(0, 4 - d));
+  document.getElementById("list").innerHTML = topics.map((t) => {
+    if (t.status !== "ready") return `<div class="card" style="margin-bottom:12px;opacity:.6"><b>Ngày ${t.day} · ${H.esc(t.title)}</b> <span class="badge">sắp có</span></div>`;
+    return `<div class="card" style="margin-bottom:12px"><div class="row" style="margin-bottom:10px"><b>Ngày ${t.day} · <a href="topic.html?id=${t.id}">${H.esc(t.title)}</a></b><span class="grow"></span><span class="small muted">${H.Progress.topicPercent(t)}%</span></div>
+      <div class="prob-list">${t.problems.map((pid, k) => {
+        const p = byId[pid] || { title: pid, subtasks: [] };
+        const b = H.Progress.best(pid);
+        const sc = b ? `<span class="score ${b.score === b.max ? "v-AC" : b.score ? "v-TLE" : "v-WA"}">${b.score}/${b.max}</span>` : '<span class="score muted">chưa nộp</span>';
+        return `<a class="prob-item" href="problem.html?id=${pid}"><b>${k + 1}.</b><span>${H.esc(p.title)}</span><span class="small" style="color:var(--warn)">${stars(p.difficulty || 1)}</span><span class="small muted">${p.subtasks.length} subtask</span>${sc}</a>`;
+      }).join("")}</div></div>`;
+  }).join("");
+})();
+</script>
+</body>
+</html>

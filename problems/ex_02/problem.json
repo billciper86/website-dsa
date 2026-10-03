@@ -1,0 +1,13 @@
+{
+  "title": "Chuồng bò",
+  "code": "CHUONGBO",
+  "topic": "exam",
+  "order": 2,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n ≤ 1000, xᵢ ≤ 1000"},
+    {"points": 70, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

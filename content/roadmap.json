@@ -1,0 +1,56 @@
+{
+  "goal": "Giải Ba HSG Tin học lớp 10 cấp tỉnh",
+  "why": [
+    "Số học được đưa lên trước QHĐ: học nhanh, rất hay xuất hiện ở bài 1–2 của đề tỉnh (bài dễ lấy điểm).",
+    "LIS chỉ học bản O(n²) là chính; bản O(n log n) chỉ đọc thêm vì dùng lại nhị phân của Ngày 1.",
+    "Hash xâu chuyển thành phần đọc thêm: tỉ lệ điểm/công sức thấp với mục tiêu giải Ba, lời giải O(n²) thường đã lấy được subtask.",
+    "Đồ thị chỉ học BFS/DFS và loang trên lưới. Không học Dijkstra hay DSU.",
+    "Mỗi ngày có 1 buổi tối để làm lại bài sai: sửa lỗi của chính mình là cách tăng điểm nhanh nhất."
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Ngày 1 — Nền tảng: tối ưu từ O(n²) xuống O(n)",
+      "blocks": [
+        {"id": "d1b1", "time": "07:30–08:00", "min": 30, "type": "learn", "title": "Độ phức tạp & đọc giới hạn n", "topic": "complexity"},
+        {"id": "d1b2", "time": "08:00–08:30", "min": 30, "type": "practice", "title": "Làm 3 bài Độ phức tạp", "topic": "complexity"},
+        {"id": "d1b3", "time": "08:30–09:00", "min": 30, "type": "learn", "title": "Lý thuyết prefix sum 1D/2D + mảng hiệu", "topic": "prefix"},
+        {"id": "d1b4", "time": "09:00–10:15", "min": 75, "type": "practice", "title": "Làm 4 bài Prefix sum", "topic": "prefix"},
+        {"id": "d1b5", "time": "10:15–10:30", "min": 15, "type": "break", "title": "Nghỉ giải lao, đi lại, uống nước"},
+        {"id": "d1b6", "time": "10:30–12:00", "min": 90, "type": "learn", "title": "Sort, tìm kiếm nhị phân, nhị phân kết quả", "topic": "binsearch"},
+        {"id": "d1b7", "time": "12:00–13:30", "min": 90, "type": "break", "title": "Ăn trưa + ngủ trưa (quan trọng!)"},
+        {"id": "d1b8", "time": "13:30–15:30", "min": 120, "type": "learn", "title": "Two pointers & sliding window", "topic": "twoptr"},
+        {"id": "d1b9", "time": "15:30–15:45", "min": 15, "type": "break", "title": "Nghỉ giải lao"},
+        {"id": "d1b10", "time": "15:45–17:30", "min": 105, "type": "practice", "title": "Làm tiếp bài nhị phân / two pointers còn dở"},
+        {"id": "d1b11", "time": "19:30–21:00", "min": 90, "type": "review", "title": "Làm lại bài WA/TLE, ghi sổ lỗi"}
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Ngày 2 — Số học, tham lam, quy hoạch động",
+      "blocks": [
+        {"id": "d2b1", "time": "07:30–09:30", "min": 120, "type": "learn", "title": "Số học: GCD/LCM, sàng, mod, lũy thừa nhanh", "topic": "number"},
+        {"id": "d2b2", "time": "09:30–09:45", "min": 15, "type": "break", "title": "Nghỉ giải lao"},
+        {"id": "d2b3", "time": "09:45–12:00", "min": 135, "type": "learn", "title": "Tham lam: sort theo tiêu chí, đoạn thẳng", "topic": "greedy"},
+        {"id": "d2b4", "time": "12:00–13:30", "min": 90, "type": "break", "title": "Ăn trưa + ngủ trưa"},
+        {"id": "d2b5", "time": "13:30–15:30", "min": 120, "type": "learn", "title": "QHĐ 1: Kadane, đếm đường đi, DP 1 chiều", "topic": "dp1"},
+        {"id": "d2b6", "time": "15:30–15:45", "min": 15, "type": "break", "title": "Nghỉ giải lao"},
+        {"id": "d2b7", "time": "15:45–17:30", "min": 105, "type": "learn", "title": "QHĐ 2: cái túi 0/1, LIS O(n²)", "topic": "dp2"},
+        {"id": "d2b8", "time": "19:30–21:00", "min": 90, "type": "review", "title": "Làm lại bài sai + luyện viết code trâu lấy subtask"}
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Ngày 3 — Xâu, đồ thị, chiến thuật & thi thử",
+      "blocks": [
+        {"id": "d3b1", "time": "07:30–09:15", "min": 105, "type": "learn", "title": "Xâu: đếm tần suất, xâu đối xứng", "topic": "string"},
+        {"id": "d3b2", "time": "09:15–09:30", "min": 15, "type": "break", "title": "Nghỉ giải lao"},
+        {"id": "d3b3", "time": "09:30–11:30", "min": 120, "type": "learn", "title": "BFS/DFS, loang trên lưới", "topic": "graph"},
+        {"id": "d3b4", "time": "11:30–12:00", "min": 30, "type": "learn", "title": "Chiến thuật lấy điểm subtask", "topic": "strategy"},
+        {"id": "d3b5", "time": "12:00–13:30", "min": 90, "type": "break", "title": "Ăn trưa + nghỉ"},
+        {"id": "d3b6", "time": "13:30–16:30", "min": 180, "type": "exam", "title": "ĐỀ THI THỬ 180 phút (4 bài)", "link": "exam.html"},
+        {"id": "d3b7", "time": "16:45–18:00", "min": 75, "type": "review", "title": "Chữa đề, đọc lại sổ lỗi. Tối nghỉ sớm!"}
+      ]
+    }
+  ]
+}

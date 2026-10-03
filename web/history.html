@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lịch sử nộp bài</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap narrow">
+  <div class="row"><h1 style="margin:0">Lịch sử nộp bài</h1><span class="grow"></span>
+    <button class="btn" id="export">Sao lưu tiến độ (.json)</button>
+    <label class="btn">Khôi phục<input type="file" id="import" accept=".json" hidden></label>
+    <button class="btn danger" id="clear">Xóa lịch sử</button></div>
+  <p class="muted small">Tiến độ và lịch sử được lưu trong trình duyệt (localStorage) của máy này. Nếu đổi máy hoặc đổi trình duyệt, hãy dùng nút Sao lưu / Khôi phục.</p>
+  <div class="card" id="list"></div>
+  <div class="card" style="margin-top:14px" id="code-view" hidden></div>
+</main>
+<script src="js/common.js"></script>
+<script>
+(function () {
+  const H = window.HSG;
+  H.initPage("history");
+  function render() {
+    const h = H.History.all();
+    document.getElementById("list").innerHTML = h.length ? `<table class="tbl"><tr><th>Lúc</th><th>Bài</th><th>Kết quả</th><th>Điểm</th><th>Chạy lâu nhất</th><th>Ghi chú</th><th></th></tr>${h.map((r, k) =>
+      `<tr><td>${H.fmtDate(r.ts)}</td><td><a href="problem.html?id=${r.pid}">${H.esc(r.title || r.pid)}</a></td><td class="v-${r.verdict}">${r.verdict}</td><td>${r.score}/${r.max}</td><td>${r.time_ms} ms</td><td class="small muted">${r.tag ? "Thi thử" : ""}</td><td><button class="btn sm" data-k="${k}">Xem code</button></td></tr>`).join("")}</table>`
+      : '<div class="empty">Chưa có lần nộp nào.</div>';
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-k]");
+    if (!b) return;
+    const r = H.History.all()[+b.dataset.k];
+    const box = document.getElementById("code-view");
+    box.hidden = false;
+    box.innerHTML = `<b>${H.esc(r.title)} · ${H.fmtDate(r.ts)} · <span class="v-${r.verdict}">${r.verdict}</span> ${r.score}/${r.max}</b><div class="md">${H.md("```cpp\n" + r.code + "\n```")}</div>`;
+    H.wireCopy(box);
+    box.scrollIntoView({ behavior: "smooth" });
+  });
+  document.getElementById("clear").onclick = () => { if (confirm("Xóa toàn bộ lịch sử nộp bài? (Điểm cao nhất của từng bài vẫn được giữ)")) { H.Store.set("history", []); render(); } };
+  document.getElementById("export").onclick = () => {
+    const data = {};
+    for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith("hsg.")) data[k] = localStorage.getItem(k); }
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: "application/json" }));
+    a.download = "tien-do-hsg-" + new Date().toISOString().slice(0, 10) + ".json";
+    a.click();
+  };
+  document.getElementById("import").onchange = async (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+      const data = JSON.parse(await f.text());
+      if (!confirm("Ghi đè tiến độ hiện tại bằng file sao lưu?")) return;
+      for (const [k, v] of Object.entries(data)) if (k.startsWith("hsg.")) localStorage.setItem(k, v);
+      H.toast("Đã khôi phục"); render();
+    } catch (err) { alert("File không hợp lệ"); }
+  };
+  render();
+})();
+</script>
+</body>
+</html>

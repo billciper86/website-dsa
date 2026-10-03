@@ -1,0 +1,14 @@
+{
+  "title": "Đoạn chia hết",
+  "code": "CHIAHET",
+  "topic": "exam",
+  "order": 1,
+  "difficulty": 2,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n ≤ 1000"},
+    {"points": 30, "desc": "aᵢ ≥ 0"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

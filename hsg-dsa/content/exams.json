@@ -1,0 +1,10 @@
+[
+  {
+    "id": "mock1",
+    "title": "Đề thi thử tổng hợp số 1",
+    "duration": 180,
+    "problems": ["ex_01", "ex_02", "ex_03", "ex_04"],
+    "status": "ready",
+    "note": "4 bài trộn: prefix + số dư, nhị phân kết quả, QHĐ lưới, BFS nhiều nguồn."
+  }
+]

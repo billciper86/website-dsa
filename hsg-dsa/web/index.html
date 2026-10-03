@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lộ trình ôn thi HSG Tin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <h1>Ôn thi HSG Tin học 10 — 3 ngày</h1>
+      <p class="muted" id="goal" style="margin:0"></p>
+      <div style="margin-top:14px" class="row"><b>Tiến độ chung</b><span class="grow"></span><b id="overall-pct">0%</b></div>
+      <div class="progress ok" style="margin-top:6px"><span id="overall-bar" style="width:0"></span></div>
+      <div class="stat-row">
+        <div class="stat"><b id="st-ac">0</b><span>bài đạt 100 điểm</span></div>
+        <div class="stat"><b id="st-topic">0</b><span>chủ đề đã học lý thuyết</span></div>
+        <div class="stat"><b id="st-sub">0</b><span>lần nộp bài</span></div>
+      </div>
+    </div>
+    <div class="card" id="next-card">
+      <div class="muted small">BÂY GIỜ NÊN LÀM</div>
+      <h2 id="next-title" style="margin:6px 0 4px;font-size:20px">…</h2>
+      <div class="muted" id="next-time"></div>
+      <div class="row" style="margin-top:14px" id="next-actions"></div>
+      <details style="margin-top:14px">
+        <summary class="small" style="cursor:pointer">Vì sao lộ trình được sắp như vậy?</summary>
+        <ul class="small" id="why" style="padding-left:18px"></ul>
+      </details>
+    </div>
+  </section>
+
+  <div class="section-title"><h2>Lộ trình theo giờ</h2><span class="small muted">Tick vào ô khi xong · bấm ⏱ để hẹn giờ cho khối học</span></div>
+  <div class="days" id="days"></div>
+
+  <div class="section-title"><h2>Các chủ đề</h2><span class="small muted">% = lý thuyết + điểm các bài tập</span></div>
+  <div class="topics" id="topics"></div>
+
+  <div class="section-title"><h2>Nộp bài gần đây</h2><a href="history.html" class="small">Xem tất cả →</a></div>
+  <div class="card" id="recent"></div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/pages/home.js"></script>
+</body>
+</html>

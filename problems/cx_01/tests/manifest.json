@@ -1,0 +1,552 @@
+{
+ "fingerprint": "9e8a99be3b091823f0c34bf9bdabf0293959f203",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "nhỏ nhất: a=b=k=1",
+   "size": 8,
+   "sol_ms": 160
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 22,
+   "sol_ms": 137
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "a=b, không chia hết -> 0",
+   "size": 8,
+   "sol_ms": 136
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "k=1: mọi số đều chia hết",
+   "size": 14,
+   "sol_ms": 136
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "k=b",
+   "size": 20,
+   "sol_ms": 25
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "k > b -> 0",
+   "size": 13,
+   "sol_ms": 21
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "biên b=10^6",
+   "size": 49,
+   "sol_ms": 24
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "a chính là bội (bẫy a-1)",
+   "size": 20,
+   "sol_ms": 23
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 170,
+   "sol_ms": 19
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 41,
+   "sol_ms": 23
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 125,
+   "sol_ms": 21
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 59,
+   "sol_ms": 21
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 55,
+   "sol_ms": 18
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 44,
+   "sol_ms": 19
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 58,
+   "sol_ms": 17
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 124,
+   "sol_ms": 19
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 23,
+   "sol_ms": 20
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 177,
+   "sol_ms": 20
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 113,
+   "sol_ms": 20
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 23,
+   "sol_ms": 19
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 20,
+   "sol_ms": 19
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 18,
+   "sol_ms": 20
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 131,
+   "sol_ms": 19
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 86,
+   "sol_ms": 62
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 161,
+   "sol_ms": 59
+  },
+  {
+   "name": "026",
+   "subtask": 2,
+   "note": "k=1, đoạn dài 1e9 -> lời giải duyệt sẽ TLE",
+   "size": 17,
+   "sol_ms": 56
+  },
+  {
+   "name": "027",
+   "subtask": 2,
+   "note": "T=1e5, đoạn dài nhất",
+   "size": 1500007,
+   "sol_ms": 57
+  },
+  {
+   "name": "028",
+   "subtask": 2,
+   "note": "a=b=k=1e9",
+   "size": 33005,
+   "sol_ms": 18
+  },
+  {
+   "name": "029",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 3161,
+   "sol_ms": 21
+  },
+  {
+   "name": "030",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 6178,
+   "sol_ms": 20
+  },
+  {
+   "name": "031",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 46615,
+   "sol_ms": 17
+  },
+  {
+   "name": "032",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 28627,
+   "sol_ms": 21
+  },
+  {
+   "name": "033",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 46161,
+   "sol_ms": 20
+  },
+  {
+   "name": "034",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 46891,
+   "sol_ms": 20
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 17979,
+   "sol_ms": 19
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 30908,
+   "sol_ms": 19
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 11531,
+   "sol_ms": 79
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "ngẫu nhiên vừa",
+   "size": 32649,
+   "sol_ms": 143
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "T=100000 ngẫu nhiên",
+   "size": 2542182,
+   "sol_ms": 248
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "T=100000 ngẫu nhiên",
+   "size": 2542267,
+   "sol_ms": 246
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254357,
+   "sol_ms": 66
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254522,
+   "sol_ms": 79
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254137,
+   "sol_ms": 58
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254533,
+   "sol_ms": 65
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254230,
+   "sol_ms": 63
+  },
+  {
+   "name": "046",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254529,
+   "sol_ms": 46
+  },
+  {
+   "name": "047",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254449,
+   "sol_ms": 96
+  },
+  {
+   "name": "048",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254178,
+   "sol_ms": 69
+  },
+  {
+   "name": "049",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 254712,
+   "sol_ms": 49
+  },
+  {
+   "name": "050",
+   "subtask": 2,
+   "note": "T=10000 ngẫu nhiên",
+   "size": 253863,
+   "sol_ms": 61
+  },
+  {
+   "name": "051",
+   "subtask": 3,
+   "note": "đáp án = 1e18 (int sẽ tràn)",
+   "size": 26,
+   "sol_ms": 48
+  },
+  {
+   "name": "052",
+   "subtask": 3,
+   "note": "k = 1e18",
+   "size": 44,
+   "sol_ms": 42
+  },
+  {
+   "name": "053",
+   "subtask": 3,
+   "note": "giá trị cực đại",
+   "size": 162,
+   "sol_ms": 40
+  },
+  {
+   "name": "054",
+   "subtask": 3,
+   "note": "k lớn",
+   "size": 61,
+   "sol_ms": 42
+  },
+  {
+   "name": "055",
+   "subtask": 3,
+   "note": "vượt 2^31 một chút (bẫy int)",
+   "size": 35,
+   "sol_ms": 43
+  },
+  {
+   "name": "056",
+   "subtask": 3,
+   "note": "quanh 2^31",
+   "size": 50,
+   "sol_ms": 39
+  },
+  {
+   "name": "057",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1497,
+   "sol_ms": 39
+  },
+  {
+   "name": "058",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 36265,
+   "sol_ms": 38
+  },
+  {
+   "name": "059",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 32952,
+   "sol_ms": 36
+  },
+  {
+   "name": "060",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 44072,
+   "sol_ms": 37
+  },
+  {
+   "name": "061",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 30270,
+   "sol_ms": 33
+  },
+  {
+   "name": "062",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 20027,
+   "sol_ms": 43
+  },
+  {
+   "name": "063",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 24354,
+   "sol_ms": 41
+  },
+  {
+   "name": "064",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 33944,
+   "sol_ms": 37
+  },
+  {
+   "name": "065",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 31493,
+   "sol_ms": 36
+  },
+  {
+   "name": "066",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 30325,
+   "sol_ms": 166
+  },
+  {
+   "name": "067",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 379,
+   "sol_ms": 243
+  },
+  {
+   "name": "068",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 10699,
+   "sol_ms": 435
+  },
+  {
+   "name": "069",
+   "subtask": 3,
+   "note": "T=100000, giá trị tới 1e18",
+   "size": 4872200,
+   "sol_ms": 390
+  },
+  {
+   "name": "070",
+   "subtask": 3,
+   "note": "T=100000, giá trị tới 1e18",
+   "size": 4876538,
+   "sol_ms": 228
+  },
+  {
+   "name": "071",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 487516,
+   "sol_ms": 36
+  },
+  {
+   "name": "072",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 489446,
+   "sol_ms": 49
+  },
+  {
+   "name": "073",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 486975,
+   "sol_ms": 38
+  },
+  {
+   "name": "074",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 486461,
+   "sol_ms": 48
+  },
+  {
+   "name": "075",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 487661,
+   "sol_ms": 110
+  },
+  {
+   "name": "076",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 488630,
+   "sol_ms": 80
+  },
+  {
+   "name": "077",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 486722,
+   "sol_ms": 55
+  },
+  {
+   "name": "078",
+   "subtask": 3,
+   "note": "T=10000, giá trị tới 1e18",
+   "size": 487630,
+   "sol_ms": 37
+  }
+ ],
+ "count": 78
+}

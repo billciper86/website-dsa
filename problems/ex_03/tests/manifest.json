@@ -1,0 +1,496 @@
+{
+ "fingerprint": "72b04c7982c37ac1449a7e79954e8e13332f3c68",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 25,
+   "sol_ms": 15
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "1 ô âm",
+   "size": 7,
+   "sol_ms": 15
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "1 ô",
+   "size": 6,
+   "sol_ms": 15
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "toàn số âm (bẫy viền 0)",
+   "size": 1091,
+   "sol_ms": 15
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "1 hàng",
+   "size": 109,
+   "sol_ms": 0
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "1 cột",
+   "size": 109,
+   "sol_ms": 0
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "toàn 1e9 -> 1.9e10",
+   "size": 1106,
+   "sol_ms": 0
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 72,
+   "sol_ms": 0
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 79,
+   "sol_ms": 0
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 82,
+   "sol_ms": 0
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 459,
+   "sol_ms": 0
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 84,
+   "sol_ms": 0
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 419,
+   "sol_ms": 15
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 300,
+   "sol_ms": 0
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 83,
+   "sol_ms": 0
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 890,
+   "sol_ms": 0
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 271,
+   "sol_ms": 0
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 31,
+   "sol_ms": 0
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 197,
+   "sol_ms": 15
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 1049,
+   "sol_ms": 0
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 26,
+   "sol_ms": 0
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 297,
+   "sol_ms": 0
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 114,
+   "sol_ms": 0
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 143,
+   "sol_ms": 0
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 26,
+   "sol_ms": 15
+  },
+  {
+   "name": "026",
+   "subtask": 2,
+   "note": "toàn 1e9, 500x500 (~1e12)",
+   "size": 2750008,
+   "sol_ms": 46
+  },
+  {
+   "name": "027",
+   "subtask": 2,
+   "note": "toàn 0",
+   "size": 500008,
+   "sol_ms": 31
+  },
+  {
+   "name": "028",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 522751,
+   "sol_ms": 31
+  },
+  {
+   "name": "029",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 522701,
+   "sol_ms": 15
+  },
+  {
+   "name": "030",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 522775,
+   "sol_ms": 46
+  },
+  {
+   "name": "031",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 58532,
+   "sol_ms": 31
+  },
+  {
+   "name": "032",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 1430,
+   "sol_ms": 0
+  },
+  {
+   "name": "033",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 125620,
+   "sol_ms": 31
+  },
+  {
+   "name": "034",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 39522,
+   "sol_ms": 15
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 18602,
+   "sol_ms": 15
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 29574,
+   "sol_ms": 31
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 6465,
+   "sol_ms": 0
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 44661,
+   "sol_ms": 0
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 45553,
+   "sol_ms": 0
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 8864,
+   "sol_ms": 15
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 1887,
+   "sol_ms": 0
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 8090,
+   "sol_ms": 0
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 11554,
+   "sol_ms": 15
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 5511,
+   "sol_ms": 0
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "ngẫu nhiên không âm",
+   "size": 11716,
+   "sol_ms": 15
+  },
+  {
+   "name": "046",
+   "subtask": 3,
+   "note": "toàn -1e9",
+   "size": 3000008,
+   "sol_ms": 46
+  },
+  {
+   "name": "047",
+   "subtask": 3,
+   "note": "toàn âm ngẫu nhiên",
+   "size": 2721963,
+   "sol_ms": 46
+  },
+  {
+   "name": "048",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2471781,
+   "sol_ms": 46
+  },
+  {
+   "name": "049",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2722369,
+   "sol_ms": 46
+  },
+  {
+   "name": "050",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 2472367,
+   "sol_ms": 15
+  },
+  {
+   "name": "051",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 55485,
+   "sol_ms": 0
+  },
+  {
+   "name": "052",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 36315,
+   "sol_ms": 15
+  },
+  {
+   "name": "053",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 29009,
+   "sol_ms": 15
+  },
+  {
+   "name": "054",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 204248,
+   "sol_ms": 15
+  },
+  {
+   "name": "055",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 58065,
+   "sol_ms": 0
+  },
+  {
+   "name": "056",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 912,
+   "sol_ms": 15
+  },
+  {
+   "name": "057",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 23496,
+   "sol_ms": 0
+  },
+  {
+   "name": "058",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 24098,
+   "sol_ms": 15
+  },
+  {
+   "name": "059",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 7227,
+   "sol_ms": 0
+  },
+  {
+   "name": "060",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 31071,
+   "sol_ms": 15
+  },
+  {
+   "name": "061",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 81675,
+   "sol_ms": 15
+  },
+  {
+   "name": "062",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 125519,
+   "sol_ms": 15
+  },
+  {
+   "name": "063",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 4443,
+   "sol_ms": 15
+  },
+  {
+   "name": "064",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 32569,
+   "sol_ms": 15
+  },
+  {
+   "name": "065",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 5034,
+   "sol_ms": 15
+  },
+  {
+   "name": "066",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 5493,
+   "sol_ms": 15
+  },
+  {
+   "name": "067",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 161164,
+   "sol_ms": 15
+  },
+  {
+   "name": "068",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 5374,
+   "sol_ms": 0
+  },
+  {
+   "name": "069",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 26896,
+   "sol_ms": 0
+  },
+  {
+   "name": "070",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 41310,
+   "sol_ms": 0
+  }
+ ],
+ "count": 70
+}

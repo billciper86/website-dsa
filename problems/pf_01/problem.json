@@ -1,0 +1,14 @@
+{
+  "title": "Tổng đoạn",
+  "code": "TONGDOAN",
+  "topic": "prefix",
+  "order": 1,
+  "difficulty": 1,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 30, "desc": "n, q ≤ 1000"},
+    {"points": 30, "desc": "0 ≤ aᵢ ≤ 1000"},
+    {"points": 40, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Đếm đoạn có tổng K",
+  "code": "DOANK",
+  "topic": "prefix",
+  "order": 2,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 20, "desc": "n ≤ 300"},
+    {"points": 30, "desc": "n ≤ 5000"},
+    {"points": 20, "desc": "aᵢ ≥ 1 (mọi số đều dương)"},
+    {"points": 30, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

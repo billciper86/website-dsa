@@ -1,0 +1,503 @@
+{
+ "fingerprint": "705b7083204d74de1efecb893a8fc0a3e80d7cc4",
+ "tests": [
+  {
+   "name": "001",
+   "subtask": 1,
+   "note": "ví dụ đề bài",
+   "size": 14,
+   "sol_ms": 34
+  },
+  {
+   "name": "002",
+   "subtask": 1,
+   "note": "n=2, k=1 (mọi cặp đều đúng)",
+   "size": 8,
+   "sol_ms": 36
+  },
+  {
+   "name": "003",
+   "subtask": 1,
+   "note": "n=2, không cặp nào",
+   "size": 9,
+   "sol_ms": 47
+  },
+  {
+   "name": "004",
+   "subtask": 1,
+   "note": "k chẵn, toàn dư k/2",
+   "size": 15,
+   "sol_ms": 33
+  },
+  {
+   "name": "005",
+   "subtask": 1,
+   "note": "toàn số bằng nhau, dư 0",
+   "size": 4007,
+   "sol_ms": 30
+  },
+  {
+   "name": "006",
+   "subtask": 1,
+   "note": "giá trị cực đại",
+   "size": 22013,
+   "sol_ms": 26
+  },
+  {
+   "name": "007",
+   "subtask": 1,
+   "note": "tổng 2 số > 2^31 (bẫy int)",
+   "size": 20008,
+   "sol_ms": 27
+  },
+  {
+   "name": "008",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 15520,
+   "sol_ms": 27
+  },
+  {
+   "name": "009",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 10994,
+   "sol_ms": 20
+  },
+  {
+   "name": "010",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 17390,
+   "sol_ms": 22
+  },
+  {
+   "name": "011",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 165,
+   "sol_ms": 23
+  },
+  {
+   "name": "012",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 1322,
+   "sol_ms": 17
+  },
+  {
+   "name": "013",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 68,
+   "sol_ms": 16
+  },
+  {
+   "name": "014",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 3222,
+   "sol_ms": 18
+  },
+  {
+   "name": "015",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 8878,
+   "sol_ms": 16
+  },
+  {
+   "name": "016",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 3508,
+   "sol_ms": 17
+  },
+  {
+   "name": "017",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 3475,
+   "sol_ms": 17
+  },
+  {
+   "name": "018",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 19406,
+   "sol_ms": 18
+  },
+  {
+   "name": "019",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 3302,
+   "sol_ms": 17
+  },
+  {
+   "name": "020",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 356,
+   "sol_ms": 17
+  },
+  {
+   "name": "021",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 14931,
+   "sol_ms": 23
+  },
+  {
+   "name": "022",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 18692,
+   "sol_ms": 19
+  },
+  {
+   "name": "023",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 315,
+   "sol_ms": 35
+  },
+  {
+   "name": "024",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 3894,
+   "sol_ms": 15
+  },
+  {
+   "name": "025",
+   "subtask": 1,
+   "note": "ngẫu nhiên nhỏ",
+   "size": 404,
+   "sol_ms": 18
+  },
+  {
+   "name": "026",
+   "subtask": 2,
+   "note": "n=2, k=2",
+   "size": 8,
+   "sol_ms": 17
+  },
+  {
+   "name": "027",
+   "subtask": 2,
+   "note": "toàn lẻ -> C(n,2) ~ 2e10 (bẫy int)",
+   "size": 400009,
+   "sol_ms": 72
+  },
+  {
+   "name": "028",
+   "subtask": 2,
+   "note": "toàn chẵn",
+   "size": 2007,
+   "sol_ms": 47
+  },
+  {
+   "name": "029",
+   "subtask": 2,
+   "note": "giá trị cực đại",
+   "size": 2200009,
+   "sol_ms": 47
+  },
+  {
+   "name": "030",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 1977761,
+   "sol_ms": 42
+  },
+  {
+   "name": "031",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 1977566,
+   "sol_ms": 37
+  },
+  {
+   "name": "032",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 103118,
+   "sol_ms": 21
+  },
+  {
+   "name": "033",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 32126,
+   "sol_ms": 20
+  },
+  {
+   "name": "034",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 27072,
+   "sol_ms": 18
+  },
+  {
+   "name": "035",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 20159,
+   "sol_ms": 22
+  },
+  {
+   "name": "036",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 100925,
+   "sol_ms": 22
+  },
+  {
+   "name": "037",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 66298,
+   "sol_ms": 21
+  },
+  {
+   "name": "038",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 121375,
+   "sol_ms": 21
+  },
+  {
+   "name": "039",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 44,
+   "sol_ms": 17
+  },
+  {
+   "name": "040",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 140002,
+   "sol_ms": 19
+  },
+  {
+   "name": "041",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 168585,
+   "sol_ms": 20
+  },
+  {
+   "name": "042",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 103714,
+   "sol_ms": 21
+  },
+  {
+   "name": "043",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 145071,
+   "sol_ms": 20
+  },
+  {
+   "name": "044",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 86847,
+   "sol_ms": 17
+  },
+  {
+   "name": "045",
+   "subtask": 2,
+   "note": "ngẫu nhiên k=2",
+   "size": 193226,
+   "sol_ms": 39
+  },
+  {
+   "name": "046",
+   "subtask": 3,
+   "note": "k=1: mọi cặp -> 19999900000",
+   "size": 400009,
+   "sol_ms": 34
+  },
+  {
+   "name": "047",
+   "subtask": 3,
+   "note": "k=1e6, toàn dư k/2",
+   "size": 1400015,
+   "sol_ms": 47
+  },
+  {
+   "name": "048",
+   "subtask": 3,
+   "note": "nửa dư 0, nửa dư 1",
+   "size": 50014,
+   "sol_ms": 24
+  },
+  {
+   "name": "049",
+   "subtask": 3,
+   "note": "toàn dư 3 với k=6",
+   "size": 196269,
+   "sol_ms": 16
+  },
+  {
+   "name": "050",
+   "subtask": 3,
+   "note": "dư r và k-r",
+   "size": 134649,
+   "sol_ms": 29
+  },
+  {
+   "name": "051",
+   "subtask": 3,
+   "note": "k nguyên tố lớn",
+   "size": 197740,
+   "sol_ms": 64
+  },
+  {
+   "name": "052",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1377908,
+   "sol_ms": 78
+  },
+  {
+   "name": "053",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1977669,
+   "sol_ms": 52
+  },
+  {
+   "name": "054",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1978047,
+   "sol_ms": 35
+  },
+  {
+   "name": "055",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 24624,
+   "sol_ms": 19
+  },
+  {
+   "name": "056",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 163273,
+   "sol_ms": 17
+  },
+  {
+   "name": "057",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 36082,
+   "sol_ms": 18
+  },
+  {
+   "name": "058",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 103479,
+   "sol_ms": 18
+  },
+  {
+   "name": "059",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 21335,
+   "sol_ms": 21
+  },
+  {
+   "name": "060",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 1203,
+   "sol_ms": 18
+  },
+  {
+   "name": "061",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 28240,
+   "sol_ms": 21
+  },
+  {
+   "name": "062",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 19536,
+   "sol_ms": 18
+  },
+  {
+   "name": "063",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 5029,
+   "sol_ms": 23
+  },
+  {
+   "name": "064",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 119435,
+   "sol_ms": 19
+  },
+  {
+   "name": "065",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 10095,
+   "sol_ms": 18
+  },
+  {
+   "name": "066",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 54691,
+   "sol_ms": 23
+  },
+  {
+   "name": "067",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 80742,
+   "sol_ms": 19
+  },
+  {
+   "name": "068",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 38318,
+   "sol_ms": 18
+  },
+  {
+   "name": "069",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 14765,
+   "sol_ms": 18
+  },
+  {
+   "name": "070",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 148345,
+   "sol_ms": 18
+  },
+  {
+   "name": "071",
+   "subtask": 3,
+   "note": "ngẫu nhiên lớn",
+   "size": 41408,
+   "sol_ms": 17
+  }
+ ],
+ "count": 71
+}
