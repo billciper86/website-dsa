@@ -1,9 +1,12 @@
 // Mê cung - Lời giải chuẩn: BFS tìm đường ngắn nhất trên lưới, O(n*m)
+// [BƯỚC 1] Mảng khoảng cách
+// > dist = −1 nghĩa là chưa thăm.
 #include <bits/stdc++.h>
 using namespace std;
 
 int dist_[1005][1005];          // dist_[x][y] = số bước ít nhất từ S tới (x, y); -1 = chưa thăm
 
+// [BƯỚC 2] Đọc lưới, tìm S và T
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -18,6 +21,8 @@ int main() {
             if (g[i][j] == 'S') { sx = i; sy = j; }
             if (g[i][j] == 'T') { tx = i; ty = j; }
         }
+    // [BƯỚC 3] BFS từ S
+    // > dist[S] = 0. Mỗi ô kề hợp lệ chưa thăm: dist = dist[u] + 1 rồi push. Tới T thì dừng.
     const int dx[4] = {-1, 1, 0, 0}, dy[4] = {0, 0, -1, 1};
     queue<pair<int, int>> q;
     dist_[sx][sy] = 0;
@@ -33,6 +38,8 @@ int main() {
             q.push({nx, ny});
         }
     }
+    // [BƯỚC 4] In kết quả
+    // > −1 nếu không tới được.
     cout << dist_[tx][ty] << '\n';                     // -1 nếu không tới được
     return 0;
 }

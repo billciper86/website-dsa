@@ -15,12 +15,37 @@ from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
 
 import analyzer
+import debugger
 import judge_core as jc
+import steps
 
 ROOT = jc.ROOT
 WEB = os.path.join(ROOT, "web")
 CONTENT = os.path.join(ROOT, "content")
 PORT = int(os.environ.get("PORT", "8686"))
+VERSION = 4          # tăng mỗi khi thêm API; web dùng để phát hiện server cũ còn chạy
+
+
+def stop_old_server(port):
+    """Nếu cổng đang bị một server ôn thi bản CŨ chiếm thì yêu cầu nó tắt. Trả về True nếu đã giải phóng."""
+    import urllib.request
+    import json as _json
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}/api/status", timeout=2) as r:
+            info = _json.loads(r.read().decode("utf-8"))
+    except Exception:
+        return False
+    if info.get("version", 0) >= VERSION:
+        return False
+    try:
+        req = urllib.request.Request(f"http://127.0.0.1:{port}/api/shutdown", data=b"{}", method="POST")
+        urllib.request.urlopen(req, timeout=2)
+    except Exception:
+        print(f"  [!] Cổng {port} đang bị server bản CŨ chiếm. Hãy đóng cửa sổ đen cũ (hoặc nhấn Ctrl+C trong đó).")
+        return False
+    import time as _t
+    _t.sleep(1.0)
+    return True
 
 mimetypes.add_type("text/markdown; charset=utf-8", ".md")
 mimetypes.add_type("application/javascript; charset=utf-8", ".js")
@@ -72,11 +97,15 @@ class Handler(BaseHTTPRequestHandler):
         path = unquote(urlparse(self.path).path)
         try:
             if path == "/api/status":
-                return self.send_json({"ok": True, "gpp": jc.gpp_version(), "gpp_path": jc.GPP})
+                return self.send_json({"ok": True, "gpp": jc.gpp_version(), "gpp_path": jc.GPP, "version": VERSION})
             if path == "/api/problems":
                 return self.send_json(jc.list_problems())
             if path.startswith("/api/problem/"):
                 return self.send_json(jc.load_problem(path.split("/")[-1]))
+            if path.startswith("/api/steps/"):
+                pid = path.split("/")[-1]
+                jc.load_problem(pid)
+                return self.send_json(steps.parse_steps(pid))
             if path.startswith("/api/solution/"):
                 pid = path.split("/")[-1]
                 jc.load_problem(pid)  # kiểm tra mã bài hợp lệ
@@ -116,6 +145,14 @@ class Handler(BaseHTTPRequestHandler):
                 except Exception:
                     traceback.print_exc()
                 return self.send_json(res)
+            if path == "/api/shutdown":          # bản server mới hơn yêu cầu bản cũ tắt để nhường cổng
+                threading.Thread(target=self.server.shutdown, daemon=True).start()
+                return self.send_json({"ok": True})
+            if path == "/api/debug":
+                inp = body.get("input", "")
+                if len(inp) > 20000:
+                    return self.send_json({"status": "ERR", "error": "Input quá lớn để gỡ lỗi (tối đa 20.000 ký tự). Hãy dùng test nhỏ."})
+                return self.send_json(debugger.debug_run(body.get("code", ""), inp))
             if path == "/api/analyze":
                 return self.send_json(analyzer.analyze(body.get("id", ""), body.get("code", ""),
                                                        body.get("verdict"), body.get("score"), body.get("max_score")))
@@ -139,6 +176,8 @@ def main():
         print("      Xem phần 'Cài g++' trong HUONG_DAN.md")
     port = PORT
     httpd = None
+    if stop_old_server(PORT):
+        print("  Đã tắt server bản cũ đang chạy.")
     for p in range(port, port + 20):
         try:
             httpd = ThreadingHTTPServer(("127.0.0.1", p), Handler)

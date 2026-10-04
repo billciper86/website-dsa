@@ -54,6 +54,7 @@ int main() {
           <div class="cbe-gutter"></div>
           <div class="cbe-code">
             <div class="cbe-curline"></div>
+            <div class="cbe-dbgline" hidden></div>
             <pre class="cbe-hl"></pre>
             <pre class="cbe-sq" aria-hidden="true"></pre>
             <textarea class="cbe-ta" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off"></textarea>
@@ -64,7 +65,18 @@ int main() {
       this.ta = host.querySelector(".cbe-ta");
       this.hl = host.querySelector(".cbe-hl");
       this.sq = host.querySelector(".cbe-sq");
+      this.dbg = host.querySelector(".cbe-dbgline");
       this.markers = [];
+      this.bps = new Set();          // các dòng đặt breakpoint
+      this.dbgLine = null;
+      this.gutter_click = (e) => {
+        const g = e.target.closest("[data-ln]");
+        if (!g) return;
+        const ln = +g.dataset.ln;
+        this.bps.has(ln) ? this.bps.delete(ln) : this.bps.add(ln);
+        this.render();
+        this.opts.onBreakpoints && this.opts.onBreakpoints(this.bps);
+      };
       this.ta.addEventListener("mousemove", (e) => {
         const line = Math.floor((e.offsetY - 8) / this.lh) + 1;
         const ms = this.markers.filter((m) => m.line === line);
@@ -73,6 +85,8 @@ int main() {
       this.gutter = host.querySelector(".cbe-gutter");
       this.cur = host.querySelector(".cbe-curline");
       this.pos = host.querySelector(".pos");
+      this.gutter.addEventListener("mousedown", (e) => { e.preventDefault(); this.gutter_click(e); });
+      this.gutter.title = "Bấm vào số dòng để đặt / bỏ breakpoint (điểm dừng khi gỡ lỗi)";
       this.file = host.querySelector("input[type=file]");
       this.ta.value = opts.value != null ? opts.value : TEMPLATE;
       this.applyFont();
@@ -140,8 +154,12 @@ int main() {
       const rank = { error: 3, opt: 2, warn: 1 };
       for (const m of this.markers) if ((rank[m.sev] || 0) > (rank[sevOf[m.line]] || 0)) sevOf[m.line] = m.sev;
       let g = "";
-      for (let i = 1; i <= lines; i++) g += sevOf[i] ? `<span class="g-${sevOf[i]}">${i}</span>\n` : i + "\n";
+      for (let i = 1; i <= lines; i++) {
+        const cls = [sevOf[i] ? "g-" + sevOf[i] : "", this.bps.has(i) ? "bp" : "", this.dbgLine === i ? "g-dbg" : ""].join(" ").trim();
+        g += `<span data-ln="${i}" class="${cls}">${i}</span>\n`;
+      }
       this.gutter.innerHTML = g;
+      this.renderDebugLine();
       this.renderMarkers();
       this.renderCaret(true);
     }
@@ -164,6 +182,21 @@ int main() {
         }
         return out + esc(t.slice(pos));
       }).join("\n") + "\n ";
+    }
+    /** Tô dòng đang chạy khi gỡ lỗi (null = tắt) */
+    setDebugLine(line) {
+      this.dbgLine = line;
+      this.render();
+      if (line) {
+        const sc = this.host.querySelector(".cbe-scroll");
+        const y = 8 + (line - 1) * this.lh;
+        if (y < sc.scrollTop + 10 || y > sc.scrollTop + sc.clientHeight - 40) sc.scrollTop = y - sc.clientHeight / 3;
+      }
+    }
+    renderDebugLine() {
+      if (!this.dbgLine) { this.dbg.hidden = true; return; }
+      this.dbg.hidden = false;
+      this.dbg.style.top = 8 + (this.dbgLine - 1) * this.lh + "px";
     }
     gotoLine(line, col = 0) {
       const lines = this.ta.value.split("\n");

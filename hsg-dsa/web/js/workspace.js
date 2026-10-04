@@ -130,6 +130,7 @@
         onChange: (v) => {
           clearTimeout(this._sv); this._sv = setTimeout(() => Store.set(opts.draftKey, v), 400);
           clearTimeout(this._an); this._an = setTimeout(() => this.analyze(), 1200);
+          if (this.gd) this.gd.codeChanged();
         },
         onRun: () => this.run(),
         onSubmit: () => this.submit(),
@@ -159,6 +160,7 @@
         if (cp) H.copyText(cp.parentElement.querySelector("pre").textContent);
       });
       setTimeout(() => this.analyze(), 300);
+      this.gd = window.GuideDebug ? window.GuideDebug.attach(this, { noGuide: !!opts.noGuide }) : null;
     }
     /** Gọi trợ lý phân tích code (không chạy code) */
     async analyze(judged) {
@@ -226,6 +228,7 @@
         }
         this.$(".ws-cmp").innerHTML = cmp;
         this.busy(false, `${r.status === "OK" ? "Chạy xong" : r.status} · ${r.time_ms} ms`);
+        if (this.gd) this.gd.afterRun(this.$(".ws-in").value, r);
       } catch (e) {
         out.textContent = "Lỗi: " + e.message;
         this.busy(false, "");
@@ -250,6 +253,7 @@
           const g = res.querySelector("[data-gohint]");
           if (g) g.onclick = () => this.tab("hint");
         }
+        if (this.gd && r.verdict !== "AC" && r.verdict !== "CE") this.gd.afterJudge(r, res);
         History.add({ pid: this.o.problem.id, title: this.o.problem.title, ts: Date.now(), verdict: r.verdict, score: r.score, max: r.max_score,
           time_ms: r.max_time_ms || 0, code, tag: this.o.historyTag || "", spent: this.o.getSpent ? this.o.getSpent() : 0 });
         if (!this.o.historyTag) Progress.record(this.o.problem.id, r.score, r.max_score);

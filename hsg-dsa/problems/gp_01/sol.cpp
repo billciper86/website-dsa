@@ -1,4 +1,6 @@
 // Đếm vùng - Lời giải chuẩn: loang BFS trên lưới, O(n*m)
+// [BƯỚC 1] Biến toàn cục & mảng hướng
+// > dx, dy cho 4 hướng; vis đánh dấu ô đã thăm.
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -8,6 +10,8 @@ bool vis[1005][1005];                       // toàn cục: đánh dấu ô đã
 const int dx[4] = {-1, 1, 0, 0};            // 4 hướng: lên, xuống, trái, phải
 const int dy[4] = {0, 0, -1, 1};
 
+// [BƯỚC 2] Viết hàm BFS loang
+// > Cho ô đầu vào queue và đánh dấu ngay. Lấy ô ra, xét 4 ô kề: trong lưới, là '.', chưa thăm thì đánh dấu và push.
 void bfs(int sx, int sy) {
     queue<pair<int, int>> q;
     q.push({sx, sy});
@@ -24,12 +28,15 @@ void bfs(int sx, int sy) {
     }
 }
 
+// [BƯỚC 3] Đọc lưới
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cin >> n >> m;
     g.resize(n);
     for (auto &s : g) cin >> s;
+    // [BƯỚC 4] Đếm vùng
+    // > Gặp ô '.' chưa thăm thì regions++ và gọi bfs.
     int regions = 0;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
@@ -37,6 +44,7 @@ int main() {
                 regions++;
                 bfs(i, j);                       // loang để đánh dấu cả vùng
             }
+    // [BƯỚC 5] In kết quả
     cout << regions << '\n';
     return 0;
 }

@@ -62,6 +62,7 @@
     };
     const r = await fetch(path, opt);
     const data = await r.json().catch(() => ({ error: "Phản hồi không hợp lệ" }));
+    if (data.error === "Không có API này") throw new Error("Server đang chạy là bản cũ. Hãy đóng cửa sổ đen cũ rồi chạy lại CHAY_WEB.bat.");
     if (!r.ok || data.error) throw new Error(data.error || ("HTTP " + r.status));
     return data;
   }
@@ -306,6 +307,10 @@
     const dot = $("#server-dot");
     try {
       serverInfo = await api("/api/status");
+      if ((serverInfo.version || 0) < 4) {
+        const main = $("main") || document.body;
+        main.prepend(el("div", { class: "banner" }, "Đang chạy <b>server bản cũ</b> nên một số chức năng mới (gỡ lỗi, gợi ý code, từng bước) sẽ báo lỗi. Hãy <b>đóng cửa sổ đen cũ</b> (hoặc nhấn Ctrl+C trong đó), rồi nhấp đúp <b>CHAY_WEB.bat</b> lại và tải lại trang."));
+      }
       if (dot) {
         dot.className = "server-dot " + (serverInfo.gpp ? "on" : "off");
         dot.textContent = serverInfo.gpp ? "Bộ chấm sẵn sàng" : "Thiếu g++";

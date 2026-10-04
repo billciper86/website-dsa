@@ -99,7 +99,7 @@
     const p = await WS.loadProblem(pid);
     const samples = WS.renderStatement($("#statement"), p, { noSolution: true, noTimer: true, prefix: "Bài " + LETTERS[a.cur] + ". " });
     ws = new WS.Workspace({
-      problem: p, samples, right: $("#right"), draftKey: `examdraft.${a.start}.${pid}`, historyTag: "exam",
+      problem: p, samples, right: $("#right"), draftKey: `examdraft.${a.start}.${pid}`, historyTag: "exam", noGuide: true,
       canSubmit: () => { const x = getActive(); if (!x || x.finished || remain(x) <= 0) { H.toast("Đã hết giờ, không nộp được nữa"); return false; } return true; },
       onJudged: (r) => {
         const x = getActive();

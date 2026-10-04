@@ -54,6 +54,11 @@ Góc trên bên phải có chấm **xanh "Bộ chấm sẵn sàng"** là mọi t
 | Tab / Shift+Tab | Thụt lề / bỏ thụt lề (cả khối dòng đang chọn) |
 | Ctrl+Z / Ctrl+Y | Hoàn tác / làm lại |
 
+### Học theo từng bước, trợ lý code và gỡ lỗi
+- **Từng bước**: lời giải được chia thành 3–6 bước nhỏ. Mỗi bước có giải thích, *Gợi ý 1* là khung code có chỗ trống `/* ? */` để bạn tự điền, *Gợi ý 2* là code mẫu. Có nút chèn khung vào editor và nút **Kiểm tra bước này** để xem code của bạn đã đủ ý chưa.
+- **Gợi ý code**: lỗi hay gặp bị gạch chân ngay khi gõ, kèm lý do sai, cách sửa và gợi ý tối ưu theo hướng làm hiện tại của bạn.
+- **Gỡ lỗi**: chạy chính code của bạn từng bước. Dòng đang chạy được tô vàng, bạn xem được biến và mảng (ô vừa đổi tô đỏ) cùng output tới thời điểm đó. Bấm vào số dòng để đặt breakpoint. Phím tắt: `F10` bước tiếp, `Shift+F10` lùi, `F8` chạy tới breakpoint. Mô phỏng được tạo tự động sau mỗi lần **Chạy thử**, và trên **test sai nhỏ nhất** khi nộp bị WA/RE/TLE. Mỗi lần gỡ lỗi ghi lại tối đa 3000 bước đầu, input tối đa 20.000 ký tự.
+
 ## 4. Chấm bằng dòng lệnh (không cần mở web)
 
 ```
@@ -69,6 +74,9 @@ hsg-dsa/
 ├── server.py             web + API chấm (chỉ thư viện chuẩn Python, chỉ mở ở 127.0.0.1)
 ├── judge.py              chấm bằng dòng lệnh
 ├── judge_core.py         biên dịch g++, sinh test, chạy, so sánh output
+├── analyzer.py           trợ lý code: tìm lỗi hay gặp, gợi ý tối ưu
+├── debugger.py           gỡ lỗi: chèn ghi vết vào code, chạy và ghi lại từng bước
+├── steps.py              hướng dẫn từng bước (đọc mốc [BƯỚC n] trong sol.cpp)
 ├── HUONG_DAN.md          file này
 ├── content/
 │   ├── roadmap.json      lộ trình 3 ngày theo giờ

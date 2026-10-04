@@ -1,9 +1,12 @@
 // Cháy rừng - BFS nhiều nguồn: mọi ô 'F' vào hàng đợi từ đầu với thời gian 0, O(n*m)
+// [BƯỚC 1] Mảng thời gian
 #include <bits/stdc++.h>
 using namespace std;
 int t_[1005][1005];
 int main() {
     ios::sync_with_stdio(false); cin.tie(nullptr);
+    // [BƯỚC 2] Đọc lưới, cho mọi 'F' vào hàng đợi
+    // > BFS nhiều nguồn: tất cả ô đang cháy có t = 0.
     int n, m; cin >> n >> m;
     vector<string> g(n);
     for (auto &s : g) cin >> s;
@@ -12,6 +15,8 @@ int main() {
         t_[i][j] = -1;
         if (g[i][j] == 'F') { t_[i][j] = 0; q.push({i, j}); }   // TẤT CẢ nguồn lửa cùng lúc
     }
+    // [BƯỚC 3] BFS
+    // > Ô cỏ kề chưa cháy: t = t[u] + 1, push.
     int dx[4] = {-1, 1, 0, 0}, dy[4] = {0, 0, -1, 1};
     while (!q.empty()) {
         auto [x, y] = q.front(); q.pop();
@@ -22,6 +27,8 @@ int main() {
             q.push({nx, ny});
         }
     }
+    // [BƯỚC 4] Kiểm tra & lấy max
+    // > Ô cỏ nào t = −1 thì in −1; còn lại in max t.
     int ans = 0;
     for (int i = 0; i < n; i++) for (int j = 0; j < m; j++)
         if (g[i][j] == '.') {
