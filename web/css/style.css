@@ -233,6 +233,24 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: 14px; }
 }
 .cbe-ta::selection { background: var(--cb-sel); color: transparent; }
 .cbe-ta:focus { outline: none; border: 0; }
+.cbe-sq { margin: 0; padding: 8px 12px; white-space: pre; color: transparent; pointer-events: none; position: absolute; inset: 0; z-index: 1; }
+.cbe-sq, .cbe-sq * { font-family: var(--mono); font-size: var(--cbe-fs, 14px); line-height: var(--cbe-lh, 20px); }
+.sq { text-decoration-line: underline; text-decoration-style: wavy; text-decoration-skip-ink: none; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.sq-error { text-decoration-color: #e5484d; background: rgba(229, 72, 77, .10); }
+.sq-warn { text-decoration-color: #d29922; background: rgba(210, 153, 34, .10); }
+.sq-opt { text-decoration-color: #2f81f7; background: rgba(47, 129, 247, .10); }
+.cbe-gutter .g-error { color: #fff; background: #e5484d; border-radius: 3px; padding: 0 3px; }
+.cbe-gutter .g-warn { color: #000; background: #e3b341; border-radius: 3px; padding: 0 3px; }
+.cbe-gutter .g-opt { color: #fff; background: #2f81f7; border-radius: 3px; padding: 0 3px; }
+.hint-card { border: 1px solid var(--border); border-left-width: 4px; border-radius: 8px; padding: 10px 12px; margin: 8px 0; background: var(--surface); cursor: pointer; }
+.hint-card:hover { box-shadow: var(--shadow); }
+.hint-card.error { border-left-color: #e5484d; }
+.hint-card.warn { border-left-color: #d29922; }
+.hint-card.opt { border-left-color: #2f81f7; }
+.hint-card h4 { margin: 0 0 4px; font-size: 14px; display: flex; gap: 8px; align-items: center; }
+.hint-card .lbl { font-size: 12px; font-weight: 700; color: var(--text-2); margin-top: 6px; }
+.hint-card p { margin: 2px 0; font-size: 13.5px; }
+.hint-card pre { margin: 4px 0; padding: 8px 10px; background: var(--cb-bg); color: var(--cb-text); border: 1px solid var(--border); border-radius: 6px; font-size: 12.5px; overflow-x: auto; }
 .cbe-curline { position: absolute; left: 0; right: 0; height: var(--cbe-lh, 20px); background: var(--cb-curline); z-index: 0; pointer-events: none; }
 .cbe-status { display: flex; gap: 16px; font-size: 12px; padding: 3px 10px; background: var(--surface-2); border-top: 1px solid var(--border); color: var(--text-2); font-family: var(--mono); }
 

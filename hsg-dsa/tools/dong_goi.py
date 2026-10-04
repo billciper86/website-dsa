@@ -7,7 +7,7 @@ import sys
 import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {"tests", "build", "__pycache__", ".claude", ".git"}
+SKIP_DIRS = {"tests", "build", "__pycache__", ".claude", ".git", "hsg-dsa"}
 
 
 def main():

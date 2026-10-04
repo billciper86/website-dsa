@@ -1,6 +1,6 @@
 # Website ôn thi HSG Tin học 10 — Hướng dẫn cài đặt & sử dụng
 
-**Nội dung:** 11 chủ đề (lộ trình 3 ngày), 37 bài tập (mỗi bài ≥ 70 test tự sinh, có subtask), 1 đề thi thử 180 phút gồm 4 bài, mô phỏng tương tác cho từng chủ đề, editor kiểu Code::Blocks, đồng hồ bấm giờ.
+**Nội dung:** 12 chủ đề (lộ trình 3 ngày), 40 bài tập (mỗi bài ≥ 70 test tự sinh, có subtask), 1 đề thi thử 180 phút gồm 4 bài, mô phỏng tương tác cho từng chủ đề, editor kiểu Code::Blocks có trợ lý gạch chân lỗi và gợi ý tối ưu, đồng hồ bấm giờ.
 
 ## 1. Cần có gì trên máy?
 

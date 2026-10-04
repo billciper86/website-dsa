@@ -1,0 +1,13 @@
+{
+  "title": "Phân công",
+  "code": "PHANCONG",
+  "topic": "bitmask",
+  "order": 2,
+  "difficulty": 3,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "n ≤ 8"},
+    {"points": 60, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

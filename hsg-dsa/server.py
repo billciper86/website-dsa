@@ -14,6 +14,7 @@ import webbrowser
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
 
+import analyzer
 import judge_core as jc
 
 ROOT = jc.ROOT
@@ -109,7 +110,15 @@ class Handler(BaseHTTPRequestHandler):
                 print(f"  -> Chấm bài {body.get('id')}")
                 res = jc.judge(body["id"], body["code"], log=lambda m: print("  " + m))
                 print(f"  <- {res['verdict']}  {res['score']}/{res['max_score']} điểm")
+                try:
+                    res["analysis"] = analyzer.analyze(body["id"], body["code"], res["verdict"],
+                                                       res.get("score"), res.get("max_score"))
+                except Exception:
+                    traceback.print_exc()
                 return self.send_json(res)
+            if path == "/api/analyze":
+                return self.send_json(analyzer.analyze(body.get("id", ""), body.get("code", ""),
+                                                       body.get("verdict"), body.get("score"), body.get("max_score")))
             if path == "/api/run":
                 return self.send_json(jc.run_custom(body.get("code", ""), body.get("input", "")))
             return self.send_json({"error": "Không có API này"}, 404)

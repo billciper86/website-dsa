@@ -108,7 +108,8 @@
           <span class="small muted ws-status"></span>
         </div>
         <div class="card" style="padding:10px 14px">
-          <div class="tabs"><button data-tab="run" class="on">Chạy thử</button><button data-tab="res">Kết quả chấm</button><button data-tab="his">Lịch sử nộp</button></div>
+          <div class="tabs"><button data-tab="run" class="on">Chạy thử</button><button data-tab="res">Kết quả chấm</button><button data-tab="hint">Gợi ý code <span class="badge ws-hint-n"></span></button><button data-tab="his">Lịch sử nộp</button></div>
+          <div data-pane="hint" hidden><div class="ws-hint"><div class="empty">Gõ code, trợ lý sẽ tự phân tích sau khi bạn ngừng gõ.</div></div></div>
           <div data-pane="run">
             <div class="row small" style="margin-bottom:6px">${(opts.samples || []).map((s, k) => `<button class="btn sm" data-sample="${k}">Dùng ví dụ ${k + 1}</button>`).join("")}<span class="grow"></span><span class="ws-cmp"></span></div>
             <div class="runbox">
@@ -126,7 +127,10 @@
       this.ed = new window.CBEditor(edHost, {
         value: draft,
         filename: (p.code || p.id) + ".cpp",
-        onChange: (v) => { clearTimeout(this._sv); this._sv = setTimeout(() => Store.set(opts.draftKey, v), 400); },
+        onChange: (v) => {
+          clearTimeout(this._sv); this._sv = setTimeout(() => Store.set(opts.draftKey, v), 400);
+          clearTimeout(this._an); this._an = setTimeout(() => this.analyze(), 1200);
+        },
         onRun: () => this.run(),
         onSubmit: () => this.submit(),
         onSave: () => { Store.set(opts.draftKey, this.ed.value); H.toast("Đã lưu nháp (tự động lưu mỗi khi bạn gõ)"); },
@@ -148,6 +152,43 @@
         }
       });
       this.renderHistory();
+      this.$(".ws-hint").addEventListener("click", (e) => {
+        const c = e.target.closest("[data-line]");
+        if (c && !e.target.closest("button")) this.ed.gotoLine(+c.dataset.line, +c.dataset.col);
+        const cp = e.target.closest("[data-copyfix]");
+        if (cp) H.copyText(cp.parentElement.querySelector("pre").textContent);
+      });
+      setTimeout(() => this.analyze(), 300);
+    }
+    /** Gọi trợ lý phân tích code (không chạy code) */
+    async analyze(judged) {
+      const code = this.ed.value;
+      try {
+        const a = judged || await H.api("/api/analyze", { id: this.o.problem.id, code });
+        if (code !== this.ed.value) return;            // code đã đổi trong lúc chờ
+        this.renderHints(a);
+      } catch (e) { /* server chưa chạy */ }
+    }
+    renderHints(a) {
+      const fs = a.findings || [];
+      this.ed.setMarkers(fs.map((f) => ({ line: f.line, from: f.from, to: f.to, sev: f.sev, title: f.title })));
+      const nErr = fs.filter((f) => f.sev === "error").length;
+      const badge = this.$(".ws-hint-n");
+      badge.textContent = fs.length ? String(fs.length) : "";
+      badge.className = "badge ws-hint-n " + (nErr ? "bad" : fs.length ? "warn" : "");
+      const SEV = { error: ["Lỗi", "bad"], warn: ["Cảnh báo", "warn"], opt: ["Tối ưu", "acc"] };
+      let h = `<div class="small muted" style="margin-bottom:6px">Hướng làm nhận diện được: <b>${esc(a.approach ? a.approach.name : "?")}</b> · độ phức tạp ước tính <b>${esc(a.approach ? a.approach.cx : "?")}</b>. Bấm vào thẻ để nhảy tới dòng code.</div>`;
+      if (!fs.length) h += `<div class="empty">Không phát hiện lỗi hay gặp nào.${a.optimal_note ? "<br>" + esc(a.optimal_note) : ""}</div>`;
+      for (const f of fs) {
+        const s = SEV[f.sev] || SEV.warn;
+        h += `<div class="hint-card ${f.sev}" data-line="${f.line}" data-col="${f.from}">
+          <h4><span class="badge ${s[1]}">${s[0]}</span>Dòng ${f.line}: ${esc(f.title)}</h4>
+          <div class="lbl">${f.sev === "opt" ? "Hướng hiện tại & ý tưởng tối ưu" : "Vì sao sai"}</div><p>${esc(f.why)}</p>
+          ${f.fix ? `<div class="lbl">${f.sev === "opt" ? "Code gợi ý" : "Sửa thành"} <button class="btn sm ghost" data-copyfix>Sao chép</button></div><pre>${H.highlight(f.fix)}</pre>` : ""}
+          ${f.better ? `<div class="lbl">Vì sao cách này tốt hơn</div><p>${esc(f.better)}</p>` : ""}
+        </div>`;
+      }
+      this.$(".ws-hint").innerHTML = h;
     }
     tab(name) {
       this.o.right.querySelectorAll("[data-tab]").forEach((b) => b.classList.toggle("on", b.dataset.tab === name));
@@ -202,6 +243,13 @@
       try {
         const r = await H.api("/api/judge", { id: this.o.problem.id, code });
         renderResult(res, r, { onUseInput: (inp) => { this.$(".ws-in").value = inp; this.curSample = -1; this.$(".ws-cmp").innerHTML = ""; this.tab("run"); } });
+        if (r.analysis) {
+          this.renderHints(r.analysis);
+          const n = (r.analysis.findings || []).length;
+          if (n && r.verdict !== "AC") res.insertAdjacentHTML("afterbegin", `<div class="banner" style="background:var(--accent-soft);color:var(--text);border-color:var(--accent)">Trợ lý tìm thấy <b>${n}</b> điểm cần xem trong code (đã gạch chân trong editor). <button class="btn sm" data-gohint>Xem gợi ý</button></div>`);
+          const g = res.querySelector("[data-gohint]");
+          if (g) g.onclick = () => this.tab("hint");
+        }
         History.add({ pid: this.o.problem.id, title: this.o.problem.title, ts: Date.now(), verdict: r.verdict, score: r.score, max: r.max_score,
           time_ms: r.max_time_ms || 0, code, tag: this.o.historyTag || "", spent: this.o.getSpent ? this.o.getSpent() : 0 });
         if (!this.o.historyTag) Progress.record(this.o.problem.id, r.score, r.max_score);

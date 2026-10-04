@@ -1,0 +1,13 @@
+{
+  "title": "Người du lịch",
+  "code": "DULICH",
+  "topic": "bitmask",
+  "order": 3,
+  "difficulty": 4,
+  "time_limit": 1.0,
+  "memory_limit": 256,
+  "subtasks": [
+    {"points": 40, "desc": "n ≤ 9"},
+    {"points": 60, "desc": "Không có giới hạn gì thêm"}
+  ]
+}

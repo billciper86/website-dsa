@@ -55,6 +55,7 @@ int main() {
           <div class="cbe-code">
             <div class="cbe-curline"></div>
             <pre class="cbe-hl"></pre>
+            <pre class="cbe-sq" aria-hidden="true"></pre>
             <textarea class="cbe-ta" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off"></textarea>
           </div>
         </div></div>
@@ -62,13 +63,23 @@ int main() {
       this.host = host;
       this.ta = host.querySelector(".cbe-ta");
       this.hl = host.querySelector(".cbe-hl");
+      this.sq = host.querySelector(".cbe-sq");
+      this.markers = [];
+      this.ta.addEventListener("mousemove", (e) => {
+        const line = Math.floor((e.offsetY - 8) / this.lh) + 1;
+        const ms = this.markers.filter((m) => m.line === line);
+        this.ta.title = ms.map((m) => (m.sev === "error" ? "✖ " : m.sev === "opt" ? "⚡ " : "⚠ ") + m.title).join("\n");
+      });
       this.gutter = host.querySelector(".cbe-gutter");
       this.cur = host.querySelector(".cbe-curline");
       this.pos = host.querySelector(".pos");
       this.file = host.querySelector("input[type=file]");
       this.ta.value = opts.value != null ? opts.value : TEMPLATE;
       this.applyFont();
-      this.ta.addEventListener("input", () => { this.render(); this.opts.onChange && this.opts.onChange(this.value); });
+      this.ta.addEventListener("input", () => {
+        if (this.markers.length) { this.markers = []; }    // code đổi -> vị trí cũ không còn đúng
+        this.render(); this.opts.onChange && this.opts.onChange(this.value);
+      });
       this.ta.addEventListener("keydown", (e) => this.onKey(e));
       ["keyup", "click", "select", "focus"].forEach((ev) => this.ta.addEventListener(ev, () => this.renderCaret()));
       document.addEventListener("selectionchange", () => { if (document.activeElement === this.ta) this.renderCaret(); });
@@ -125,10 +136,43 @@ int main() {
       const v = this.ta.value;
       const lines = v.split("\n").length;
       this.hl.innerHTML = highlight(v, this.braceMarks()) + "\n ";
+      const sevOf = {};
+      const rank = { error: 3, opt: 2, warn: 1 };
+      for (const m of this.markers) if ((rank[m.sev] || 0) > (rank[sevOf[m.line]] || 0)) sevOf[m.line] = m.sev;
       let g = "";
-      for (let i = 1; i <= lines; i++) g += i + "\n";
-      this.gutter.textContent = g;
+      for (let i = 1; i <= lines; i++) g += sevOf[i] ? `<span class="g-${sevOf[i]}">${i}</span>\n` : i + "\n";
+      this.gutter.innerHTML = g;
+      this.renderMarkers();
       this.renderCaret(true);
+    }
+    /** Gạch chân lỗi: markers = [{line, from, to, sev, title}] (line từ 1, cột từ 0) */
+    setMarkers(ms) { this.markers = ms || []; this.render(); }
+    renderMarkers() {
+      if (!this.markers.length) { this.sq.innerHTML = ""; return; }
+      const lines = this.ta.value.split("\n");
+      const byLine = {};
+      for (const m of this.markers) (byLine[m.line] = byLine[m.line] || []).push(m);
+      this.sq.innerHTML = lines.map((t, k) => {
+        const ms = (byLine[k + 1] || []).slice().sort((a, b) => a.from - b.from);
+        if (!ms.length) return esc(t);
+        let out = "", pos = 0;
+        for (const m of ms) {
+          const a = Math.max(pos, Math.min(m.from, t.length)), b = Math.max(a, Math.min(m.to, t.length));
+          if (b <= a) continue;
+          out += esc(t.slice(pos, a)) + `<span class="sq sq-${m.sev}">${esc(t.slice(a, b))}</span>`;
+          pos = b;
+        }
+        return out + esc(t.slice(pos));
+      }).join("\n") + "\n ";
+    }
+    gotoLine(line, col = 0) {
+      const lines = this.ta.value.split("\n");
+      let off = 0;
+      for (let i = 0; i < line - 1 && i < lines.length; i++) off += lines[i].length + 1;
+      off += Math.min(col, (lines[line - 1] || "").length);
+      this.ta.focus();
+      this.ta.setSelectionRange(off, off);
+      this.renderCaret();
     }
     renderCaret(skipHl) {
       const v = this.ta.value, p = this.ta.selectionStart;

@@ -7,6 +7,7 @@
   {"id": "greedy", "day": 2, "title": "Tham lam", "short": "Sort theo tiêu chí đúng, bài đoạn thẳng, phản ví dụ.", "status": "ready", "problems": ["gr_01", "gr_02", "gr_03"]},
   {"id": "dp1", "day": 2, "title": "QHĐ cơ bản", "short": "Kadane, đếm đường đi trên lưới, DP 1 chiều.", "status": "ready", "problems": ["dp_01", "dp_02", "dp_03"]},
   {"id": "dp2", "day": 2, "title": "QHĐ kinh điển", "short": "Cái túi 0/1, dãy con tăng dài nhất (LIS), xâu con chung (LCS).", "status": "ready", "problems": ["dp_04", "dp_05", "dp_06"]},
+  {"id": "bitmask", "day": 2, "title": "Bitmask", "short": "Duyệt mọi tập con, QHĐ trạng thái tập (phân công, người du lịch).", "status": "ready", "problems": ["bm_01", "bm_02", "bm_03"]},
   {"id": "string", "day": 3, "title": "Xâu ký tự", "short": "Đếm tần suất, xâu đối xứng, cửa sổ trượt trên xâu.", "status": "ready", "problems": ["st_01", "st_02", "st_03"]},
   {"id": "graph", "day": 3, "title": "BFS/DFS & loang", "short": "Đếm vùng, đường đi ngắn nhất trên lưới, thành phần liên thông.", "status": "ready", "problems": ["gp_01", "gp_02", "gp_03"]},
   {"id": "strategy", "day": 3, "title": "Chiến thuật lấy điểm subtask", "short": "Quản lý 180 phút, viết trâu, đối chiếu tự động.", "status": "ready", "problems": ["pf_02", "bs_03", "dp_05"]}
